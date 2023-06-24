@@ -1,0 +1,28 @@
+<div class="card-container">
+  <mat-card class="demo-card mat-elevation-z8">
+    <mat-card-header class="card-header">
+      <mat-card-title class="title">User Profile</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <table mat-table [dataSource]="dataSource" class="demo-table">
+        <ng-container matColumnDef="key">
+          <td mat-cell *matCellDef="let element">{{ element.key }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="value">
+          <td mat-cell *matCellDef="let element">{{ element.value }}</td>
+        </ng-container>
+
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+      <div class="button-container">
+        <app-button
+          [options]="{ title: 'Açık Emirler', route: 'profil/acik-emirler' }"
+        ></app-button>
+        <app-button
+          [options]="{ title: 'Bakiyeler', route: 'profil/bakiyeler' }"
+        ></app-button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
