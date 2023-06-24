@@ -1,0 +1,13 @@
+.mat-toolbar {
+    background-color: #0a2363;
+    color: #ffffff;
+    padding: 10px;
+  }
+  
+  .left, .right {
+    /* Sol ve sağ içerik stilleri */
+  }
+  
+  .right {
+    text-align: right;
+  }
