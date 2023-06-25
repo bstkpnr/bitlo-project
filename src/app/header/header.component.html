@@ -1,11 +1,9 @@
-  <mat-toolbar color="primary">
-
-      <div class="logo">
-        <img src="https://www.bitlo.com/assets/static/img/bitlo_logo_white_@2x.png" alt="Bitlo Logo">
-      </div>
-      <div class="nav">
-        <a routerLink="/login" *ngIf="!isLoggedIn">Giriş Yap</a>
-        <a routerLink="/logout" *ngIf="isLoggedIn">Çıkış Yap</a>
-      </div>
-      </mat-toolbar>
-
+<mat-toolbar color="primary">
+  <div class="logo">
+    <img src='../../assets/bitlo_logo_white_@2x.webp' alt="Bitlo Logo" width="90px">
+  </div>
+  <div class="nav">
+    <a routerLink="/login" *ngIf="!isLoggedIn">Giriş Yap</a>
+    <a (click)="logout()" *ngIf="isLoggedIn">Çıkış Yap</a>
+  </div>
+</mat-toolbar>
