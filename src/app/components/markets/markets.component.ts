@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MarketService } from 'src/app/market.service';
+import { Router } from '@angular/router';
+
 
 export interface Markets {
   index: number;
@@ -34,7 +36,8 @@ export class MarketsComponent implements OnInit {
     'highestQuote24h',
     'lowestQuote24h',
   ];
-  constructor(private marketService: MarketService) {}
+  constructor(private marketService: MarketService,  private router: Router
+    ) {}
 
   ngOnInit(): void {
     this.getMarkets();
@@ -53,6 +56,9 @@ export class MarketsComponent implements OnInit {
       this.markets = markets;
       this.filterMarketData = [...this.markets];
     });
+  }
+  navigateToMarketDetail(marketCode: string) {
+    this.router.navigate(['/marketler', marketCode]);
   }
 
   
