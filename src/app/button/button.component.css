@@ -16,3 +16,9 @@
     background-color: #14c38e;
     color: white;
 }
+@media (max-width: 600px) {
+    .custom-button {
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+  }
