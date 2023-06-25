@@ -1,0 +1,76 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Arama Yap</mat-label>
+    <input
+      matInput
+      (input)="filterData($any($event.target).value)"
+      placeholder="Ex. BTC-TRY"
+      type="search"
+    />
+  </mat-form-field>
+</form>
+
+<div *ngIf="filterMarketData.length > 0; else noResults">
+  <mat-table [dataSource]="filterMarketData" class="mat-elevation-z8">
+    <ng-container matColumnDef="index">
+      <mat-header-cell *matHeaderCellDef> Sıra </mat-header-cell>
+      <mat-cell *matCellDef="let market; index as i"> {{ i + 1 }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="marketCode">
+      <mat-header-cell *matHeaderCellDef> marketCode </mat-header-cell>
+      <mat-cell *matCellDef="let market">
+        <a [routerLink]="['/:marketCode', market.marketCode]">{{
+          market.marketCode
+        }}</a>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="currentQuote">
+      <mat-header-cell *matHeaderCellDef> currentQuote </mat-header-cell>
+      <mat-cell *matCellDef="let market">
+        {{ market.currentQuote | number : "1.2-2" }}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="change24h">
+      <mat-header-cell *matHeaderCellDef> change24h </mat-header-cell>
+      <mat-cell *matCellDef="let market"> {{ market.change24h }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="change24hPercent">
+      <mat-header-cell *matHeaderCellDef> change24hPercent </mat-header-cell>
+      <mat-cell *matCellDef="let market">
+        <div
+          [ngClass]="{
+            'text-green': market.change24hPercent > 0,
+            'text-red': market.change24hPercent < 0,
+            'text-black': market.change24hPercent === 0
+          }"
+        >
+          {{ market.change24hPercent | percent }}
+        </div>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="highestQuote24h">
+      <mat-header-cell *matHeaderCellDef> highestQuote24h </mat-header-cell>
+      <mat-cell *matCellDef="let market">
+        {{ market.highestQuote24h }}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="lowestQuote24h">
+      <mat-header-cell *matHeaderCellDef> lowestQuote24h </mat-header-cell>
+      <mat-cell *matCellDef="let market">
+        {{ market.lowestQuote24h }}
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
+</div>
+<ng-template #noResults>
+  <p>Aramanız ile eşleşen sonuç bulunamadı.</p>
+</ng-template>
