@@ -27,9 +27,19 @@ export class AuthService {
 
     return this.http.post(`${this.BASE_URL}/login`, res);
   }
-  getUserProfil(): Observable<any> {
+  userProfil(): Observable<any> {
     return this.http.post<any>(`${this.BASE_URL}/me`, {}, this.httpOptions());
   }
+
+  userBalance():Observable<any>{
+    return this.http.post<any>(`${this.BASE_URL}/balances`,{},this.httpOptions());
+  }
+
+  userOpenOrders():Observable<any>{
+    return this.http.post<any>(`${this.BASE_URL}/open-orders`,{},this.httpOptions());
+  }
+
+
 
   isLoggedIn(): boolean {
     const token = localStorage.getItem('token');
