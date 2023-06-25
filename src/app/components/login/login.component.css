@@ -27,3 +27,9 @@
     text-align: center;
     margin: 5px;
   }
+
+  
+  mat-form-field{
+    color: #ffff;
+
+  }
