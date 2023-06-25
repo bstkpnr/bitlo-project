@@ -26,18 +26,30 @@
 
 .demo-table {
   width: 100%;
-  margin-top: 1rem;
+ 
 }
 
 .demo-table td {
   font-size: 0.9rem;
   color: #333;
 }
+
 .button-container {
   display: flex;
-  justify-content: space-around; 
+  justify-content: space-around;
   padding: 0 20px;
-  margin-top: 20px; 
+  margin-top: 20px;
 }
 
 
+@media screen and (max-width: 600px) {
+  .demo-card {
+    width: 95%;
+    margin: 1rem;
+  }
+
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}

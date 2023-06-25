@@ -23,7 +23,7 @@ export class ProfilComponent implements OnInit {
   constructor(private authService: AuthService) {}
 
   getUserData() {
-    this.authService.getUserProfil().subscribe(
+    this.authService.userProfil().subscribe(
       (data) => {
         let userDataRaw = data.me; 
         this.userData = Object.keys(userDataRaw)
