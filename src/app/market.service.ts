@@ -13,4 +13,7 @@ export class MarketService {
   getMarkets(): Observable<any> {
     return this.http.get<any>(this.BASE_URL);
   }
+  getMarketDetail(marketCode:string){
+    return this.http.get<any>(`${this.BASE_URL}/${marketCode}`);
+  }
 }
