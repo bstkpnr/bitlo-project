@@ -27,6 +27,8 @@ import {MatTableModule} from '@angular/material/table'
 import { SharedModule } from './shared.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ButtonModule } from './button.module';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+
 
 
 
@@ -61,7 +63,8 @@ import { ButtonModule } from './button.module';
     MatTableModule,
     SharedModule,
     FlexLayoutModule,
-    ButtonModule
+    ButtonModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent],
