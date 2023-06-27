@@ -58,7 +58,7 @@ export class MarketsComponent implements OnInit {
     });
   }
   navigateToMarketDetail(marketCode: string) {
-    this.router.navigate(['/marketler', marketCode]);
+    this.router.navigate(['/market', marketCode]);
   }
 
   

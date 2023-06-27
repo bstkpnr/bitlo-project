@@ -20,7 +20,7 @@
     <ng-container matColumnDef="marketCode">
       <mat-header-cell *matHeaderCellDef> marketCode </mat-header-cell>
       <mat-cell *matCellDef="let market">
-        <a [routerLink]="['/marketler', market.marketCode]">{{ market.marketCode }}</a>
+        <a [routerLink]="['/market', market.marketCode]">{{ market.marketCode }}</a>
 
       </mat-cell>
     </ng-container>
