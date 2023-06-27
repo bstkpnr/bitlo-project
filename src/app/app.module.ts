@@ -28,7 +28,8 @@ import { SharedModule } from './shared.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ButtonModule } from './button.module';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -64,7 +65,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     SharedModule,
     FlexLayoutModule,
     ButtonModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    NgbModule,
+    NgbCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent],
