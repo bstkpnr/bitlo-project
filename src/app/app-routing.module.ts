@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: '' ,component: HomeComponent},
   { path: 'login', component: LoginComponent,data:{showFooter:true} },
   { path: 'marketler', component: MarketsComponent,data:{showFooter:true} },
-  { path: 'marketler/:marketCode', component: MarketDetailComponent ,data:{showFooter:true}},
+  { path: 'market/:marketCode', component: MarketDetailComponent ,data:{showFooter:true}},
   { path: 'profil', component: ProfilComponent,data:{showFooter:true} },
   { path: 'profil/bakiyeler', component: BalanceComponent,data:{showFooter:true} },
   { path: 'profil/acik-emirler', component: OpenOrdersComponent ,data:{showFooter:true}},
