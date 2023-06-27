@@ -1,0 +1,87 @@
+<body>
+    <ul class="items">
+        <li class="item">
+          <img class="icon-img" src="https://static.bitlo.com/cryptologossvg/btc.svg" alt="BTC">
+          <div class="asset-detail">
+            <p class="asset-name"><b>Bitcoin</b></p>
+            <p>818,171.00</p>
+          </div>
+          <div class="asset-status">
+            <p>%1.63</p>
+            <p>+13,131.00</p>
+          </div>
+        </li>
+        <li class="item">
+          <img class="icon-img" src="https://static.bitlo.com/cryptologossvg/eth.svg" alt="ETH">
+          <div class="asset-detail">
+            <p class="asset-name"><b>Ethereum</b></p>
+            <p>50,531.00</p>
+          </div>
+          <div class="asset-status">
+            <p>%2.42</p>
+            <p>+1,192.00</p>
+          </div>
+        </li>
+        <li class="item">
+          <img class="icon-img" src="https://static.bitlo.com/cryptologossvg/comp.svg" alt="COMP">
+          <div class="asset-detail">
+            <p class="asset-name"><b>Compound</b></p>
+            <p>1,096.00</p>
+          </div>
+          <div class="asset-status">
+            <p>%13.22</p>
+            <p>+128.00</p>
+          </div>
+        </li>
+        <li class="item">
+          <img class="icon-img" src="https://static.bitlo.com/cryptologossvg/fet.svg" alt="FET">
+          <div class="asset-detail">
+            <p class="asset-name"><b>Fetch.ai</b></p>
+            <p>6.24</p>
+          </div>
+          <div class="asset-status">
+            <p>%5.76</p>
+            <p>+0.34</p>
+          </div>
+        </li>
+      </ul>
+    <div class="container">
+      <div class="info-wrapper">
+        <div class="user-info">
+          <p>Ad Soyad: Kullanıcı Adı</p>
+          <p>Telefon Numarası: +90xxxxxxx</p>
+          <p>Github Link</p>
+          <p>Demo</p>
+        </div>
+        <div class="button-container">
+          <app-button [options]="{ title: 'Kripto Marketler', route: 'marketler' }"></app-button>
+        </div>
+      </div>
+      <div class="carousel-wrapper">
+        <mat-card class="demo-card mat-elevation-z8">
+          <ngb-carousel [interval]="3000" [showNavigationIndicators]="true">
+            <ng-template ngbSlide>
+              <div class="picsum-img-wrapper">
+                <img src="../../../assets/cryptologossvg/bitlo-bitcoin-btc.jpg" alt="Bitcoin" width="600px" height="400px" />
+                
+              </div>
+            </ng-template>
+            <ng-template ngbSlide>
+              <div class="picsum-img-wrapper">
+                <img src="../../../assets/cryptologossvg/test.jpg" alt="Ethereum" width="600px" height="400px" />
+                
+              </div>
+            </ng-template>
+            <ng-template ngbSlide>
+                <div class="picsum-img-wrapper">
+                  <img src="../../../assets/cryptologossvg/test2.jpg" alt="Ethereum" width="600px" height="400px" />
+                  
+                </div>
+              </ng-template>
+          </ngb-carousel>
+        </mat-card>
+      </div>
+    </div>
+  
+   
+  </body>
