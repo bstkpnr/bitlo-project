@@ -1,6 +1,12 @@
 <mat-toolbar color="primary">
   <div class="logo">
-    <img src='../../assets/bitlo_logo_white_@2x.webp' alt="Bitlo Logo" width="90px">
+    <a [routerLink]="['/']">
+      <img
+        src="../../assets/bitlo_logo_white_@2x.webp"
+        alt="Bitlo Logo"
+        width="90px"
+      />
+    </a>
   </div>
   <div class="nav">
     <a routerLink="/login" *ngIf="!isLoggedIn">Giriş Yap</a>
