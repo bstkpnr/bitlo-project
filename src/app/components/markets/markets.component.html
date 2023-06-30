@@ -1,75 +1,124 @@
-<form class="example-form">
-  <mat-form-field class="example-full-width">
-    <mat-label>Arama Yap</mat-label>
-    <input
-      matInput
-      (input)="filterData($any($event.target).value)"
-      placeholder="Ex. BTC-TRY"
-      type="search"
-    />
-  </mat-form-field>
-</form>
+<div class="card-container">
+  <mat-card-content>
+    <mat-card class="demo-card">
+      <mat-card-header class="card-header">
+        <mat-card-title class="title">Kripto Para Marketleri</mat-card-title>
+      </mat-card-header>
 
-<div *ngIf="filterMarketData.length > 0; else noResults">
-  <mat-table [dataSource]="filterMarketData" class="mat-elevation-z8">
-    <ng-container matColumnDef="index">
-      <mat-header-cell *matHeaderCellDef> Sıra </mat-header-cell>
-      <mat-cell *matCellDef="let market; index as i"> {{ i + 1 }} </mat-cell>
-    </ng-container>
+      <img src="../../../assets/logo/gift_card.webp" />
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-label>Arama Yap</mat-label>
+          <input
+            matInput
+            (input)="filterData($any($event.target).value)"
+            placeholder="Ex. BTC-TRY"
+            type="search"
+          />
+          <!-- <button
+            mat-button
+            *ngIf="filterValue"
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            (click)="filterValue = ''"
+          >
+          </button> -->
 
-    <ng-container matColumnDef="marketCode">
-      <mat-header-cell *matHeaderCellDef> marketCode </mat-header-cell>
-      <mat-cell *matCellDef="let market">
-        <a [routerLink]="['/market', market.marketCode]">{{ market.marketCode }}</a>
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+      </form>
+      <div
+        *ngIf="filterMarketData.length > 0; else noResults"
+        class="table-container mat-elevation-z8 scrollable"
+      >
+        <mat-table [dataSource]="filterMarketData" class="mat-elevation-z8">
+          <ng-container matColumnDef="index">
+            <mat-header-cell *matHeaderCellDef> Sıra </mat-header-cell>
+            <mat-cell *matCellDef="let market; index as i">
+              {{ i + 1 }}
+            </mat-cell>
+          </ng-container>
 
-      </mat-cell>
-    </ng-container>
+          <ng-container matColumnDef="marketCode">
+            <mat-header-cell *matHeaderCellDef> marketCode </mat-header-cell>
+            <mat-cell *matCellDef="let market">
+              <a [routerLink]="['/market', market.marketCode]">{{
+                market.marketCode
+              }}</a>
+            </mat-cell>
+          </ng-container>
 
-    <ng-container matColumnDef="currentQuote">
-      <mat-header-cell *matHeaderCellDef> currentQuote </mat-header-cell>
-      <mat-cell *matCellDef="let market">
-        {{ market.currentQuote | number : "1.2-2" }}
-      </mat-cell>
-    </ng-container>
+          <ng-container matColumnDef="currentQuote">
+            <mat-header-cell *matHeaderCellDef> currentQuote </mat-header-cell>
+            <mat-cell *matCellDef="let market">
+              {{ market.currentQuote | number : '1.0-2' }}
+            </mat-cell>
+          </ng-container>
 
-    <ng-container matColumnDef="change24h">
-      <mat-header-cell *matHeaderCellDef> change24h </mat-header-cell>
-      <mat-cell *matCellDef="let market"> {{ market.change24h }} </mat-cell>
-    </ng-container>
+          <ng-container matColumnDef="change24h">
+            <mat-header-cell *matHeaderCellDef> change24h </mat-header-cell>
+            <mat-cell *matCellDef="let market">
+              {{ market.change24h }}
+            </mat-cell>
+          </ng-container>
 
-    <ng-container matColumnDef="change24hPercent">
-      <mat-header-cell *matHeaderCellDef> change24hPercent </mat-header-cell>
-      <mat-cell *matCellDef="let market">
-        <div
-          [ngClass]="{
-            'text-green': market.change24hPercent > 0,
-            'text-red': market.change24hPercent < 0,
-            'text-black': market.change24hPercent === 0
-          }"
-        >
-          {{ market.change24hPercent | percent }}
-        </div>
-      </mat-cell>
-    </ng-container>
+          <ng-container matColumnDef="change24hPercent">
+            <mat-header-cell *matHeaderCellDef>
+              change24hPercent
+            </mat-header-cell>
+            <mat-cell *matCellDef="let market">
+              <div
+                [ngClass]="{
+                  'text-green': market.change24hPercent > 0,
+                  'text-red': market.change24hPercent < 0,
+                  'text-black': market.change24hPercent === 0
+                }"
+              >
+                {{ market.change24hPercent | percent }}
+              </div>
+            </mat-cell>
+          </ng-container>
 
-    <ng-container matColumnDef="highestQuote24h">
-      <mat-header-cell *matHeaderCellDef> highestQuote24h </mat-header-cell>
-      <mat-cell *matCellDef="let market">
-        {{ market.highestQuote24h }}
-      </mat-cell>
-    </ng-container>
+          <ng-container matColumnDef="highestQuote24h">
+            <mat-header-cell *matHeaderCellDef>
+              highestQuote24h
+            </mat-header-cell>
+            <mat-cell *matCellDef="let market">
+              {{ market.highestQuote24h | number : '1.0-2' }}
+            </mat-cell>
+          </ng-container>
 
-    <ng-container matColumnDef="lowestQuote24h">
-      <mat-header-cell *matHeaderCellDef> lowestQuote24h </mat-header-cell>
-      <mat-cell *matCellDef="let market">
-        {{ market.lowestQuote24h }}
-      </mat-cell>
-    </ng-container>
+          <ng-container matColumnDef="lowestQuote24h">
+            <mat-header-cell *matHeaderCellDef>
+              lowestQuote24h
+            </mat-header-cell>
+            <mat-cell *matCellDef="let market">
+              {{ market.lowestQuote24h  | number : '1.0-2'}}
+            </mat-cell>
+          </ng-container>
 
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
-  </mat-table>
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+        </mat-table>
+        
+      </div>
+      <ng-template #noResults>
+        <p>Aramanız ile eşleşen sonuç bulunamadı.</p>
+      </ng-template>
+   
+    </mat-card>
+    <div class="note">
+      <ul>
+        <li>Bugün {{positiveChange24hPercent}} adet marketin fiyat değişim yüzdesi pozitif olmuştur.</li>
+        <li>Bugün en fazla artış gösteren ({{maxIncreaseChange24hPercent?.change24hPercent}}) market {{maxIncreaseChange24hPercent?.marketCode}} marketi olmuştur.</li>
+        <li>Bugün en fazla değer kaybeden ({{maxDecreaseChange24hPercent?.change24hPercent}}) market {{maxDecreaseChange24hPercent?.marketCode}} marketi olmuştur.</li>
+        <li>Fiyatı 10,000 TRY üzerinde olan toplam {{over10kCurrentQuote}} adet market vardır.</li>
+        <li>Fiyatı 1.00 TRY’den daha az olan toplam {{under1CurrentQuote}} adet market vardır.</li>
+        <li>Tüm marketlerdeki fiyatların toplamının aritmetik ortalaması {{avgMarketPrice | number : "1.2-2"}} TRY dir.</li>
+        <li>1 BTC = {{btcToUsdRate | number : "1.2-2"}} ABD dolarıdır.</li>
+      </ul>
+      </div>
+  </mat-card-content>
+
 </div>
-<ng-template #noResults>
-  <p>Aramanız ile eşleşen sonuç bulunamadı.</p>
-</ng-template>

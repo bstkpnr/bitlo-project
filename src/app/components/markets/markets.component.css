@@ -1,3 +1,84 @@
-.text-red { color: red; }
-.text-green { color: green; }
-.text-black { color: black; }
+.text-red {
+  color: red;
+}
+.text-green {
+  color: green;
+}
+.text-black {
+  color: black;
+}
+.note {
+  width: 100%;
+  border: none;
+  background-color: #e0e0e0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 10px;
+  background-color: #f2f2f2;
+
+}
+
+ul li {
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
+  
+
+}
+
+
+
+.card-header {
+  color: white;
+  padding: 10px 20px;
+}
+mat-card-title {
+  color: #0c0094;
+  font-size: 24px;
+  font-weight: bold;
+}
+.table-container {
+  margin-top: 1rem;
+}
+
+.demo-table {
+  width: 100%;
+}
+.example-full-width {
+  width: 100%;
+  background-color: #f2f2f2;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.example-full-width mat-icon {
+  color: #f2f2f2;
+}
+
+.example-full-width input {
+  border: none;
+}
+
+.example-full-width input:focus {
+  outline: none;
+}
+
+.demo-table td {
+  font-size: 0.9rem;
+  color: #333;
+}
+.logo-img {
+  width: 100%;
+  cursor: pointer;
+}
+.scrollable {
+  overflow-x: auto;
+}
+@media screen and (max-width: 600px) {
+  .demo-card {
+    width: 95%;
+    margin: 1rem;
+  }
+}
