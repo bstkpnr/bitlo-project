@@ -4,7 +4,7 @@ import { AuthService } from 'src/app/auth.service';
 
 export interface Balances {
   assetCode: string;
-  availableAmount:number;
+  availableAmount: number;
   availableAmountTRYValue: number;
 }
 export type BalanceList = Balances[];
@@ -44,27 +44,34 @@ export class BalanceComponent implements OnInit {
   }
   toggleBalance() {
     this.showLowBalances = !this.showLowBalances;
-    this.numberFormat();
+    this.dataSource.data = this.showLowBalances
+      ? this.balancesData.filter(
+          (balance) => balance.availableAmountTRYValue >= 1
+        )
+      : this.balancesData;
+    this.dataSource = new MatTableDataSource(this.dataSource.data);
   }
 
-  numberFormat():void{
+  numberFormat(): void {
     this.dataSource.data.forEach((balance) => {
-      balance.availableAmount = this.convertToFormatnumber(balance.availableAmount);
-      balance.availableAmountTRYValue = this.convertToFormatnumber(balance.availableAmountTRYValue);
+      balance.availableAmount = this.convertToFormatnumber(
+        balance.availableAmount
+      );
+      balance.availableAmountTRYValue = this.convertToFormatnumber(
+        balance.availableAmountTRYValue
+      );
     });
     this.dataSource.filterPredicate = this.createFilterPredicate();
     this.dataSource.filter = this.showLowBalances ? '' : '1';
   }
-  convertToFormatnumber(value: number): number{
+  convertToFormatnumber(value: number): number {
     return Number(value.toFixed(2));
-
   }
   createFilterPredicate() {
     return (data: Balances, filter: string) => {
       return data.availableAmountTRYValue > 1 || filter !== '1';
     };
   }
-
 
   ngOnInit(): void {
     this.isLoggedIn = this.authService.isLoggedIn();
