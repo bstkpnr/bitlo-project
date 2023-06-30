@@ -56,7 +56,7 @@ export class OpenOrdersComponent implements OnInit {
     if (this.isLoggedIn) {
       this.getOpenOrdersData();
     } else {
-      alert('Giriş yapmış kullanıcılar bakiyeyi görür');
+      alert('Giriş yapmış kullanıcılar bakiyeyi görsün');
     }
   }
 }
