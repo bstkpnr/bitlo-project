@@ -2,12 +2,12 @@
     background-color: #0a2363;
     color: #ffffff;
     padding: 10px;
+    display: flex;
+    justify-content: space-between;
   }
-  
-  .left, .right {
-    /* Sol ve sağ içerik stilleri */
-  }
+
   
   .right {
     text-align: right;
+    
   }
