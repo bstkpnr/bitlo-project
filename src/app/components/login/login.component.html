@@ -4,6 +4,7 @@
     <mat-card-content>
       <form (ngSubmit)="login()" #loginForm="ngForm">
         <mat-form-field appearance="outline">
+          <mat-icon matSuffix>person_outline</mat-icon>
           <input
             matInput
             type="text"
@@ -23,12 +24,15 @@
         <mat-form-field appearance="outline">
           <input
             matInput
-            type="password"
+            [type]="hide ? 'password' : 'text'"
             placeholder="Parola"
             name="password"
             [(ngModel)]="password"
             required
           />
+          <mat-icon matSuffix (click)="passHide()">
+            {{hide ? 'visibility_off' : 'visibility'}}
+          </mat-icon>
           <mat-error *ngIf="loginForm.controls['password'].hasError('required')"
             >Lütfen parolanızı giriniz.</mat-error
           >

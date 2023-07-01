@@ -32,7 +32,10 @@ export class AuthService {
 
     return this.http.post(`${this.BASE_URL}/login`, res);
   }
-  
+  logout() {
+    localStorage.removeItem('token');
+    this.setLoggedIn(false);
+  }
 
   setLoggedIn(value: boolean) {
     this.loggedIn.next(value);

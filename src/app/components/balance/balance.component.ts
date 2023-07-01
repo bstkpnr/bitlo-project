@@ -22,6 +22,8 @@ export class BalanceComponent implements OnInit {
     'availableAmount',
     'availableAmountTRYValue',
   ];
+  isFirstLoad = true;
+
   showLowBalances = true;
   dataSource = new MatTableDataSource(this.balancesData);
   constructor(private authService: AuthService) {}
@@ -78,9 +80,10 @@ export class BalanceComponent implements OnInit {
       this.isLoggedIn = loggedIn;
       if (this.isLoggedIn) {
         this.getUserBalance();
-      } else {
+      } else if(this.isFirstLoad) {
         alert('Giriş yapmış kullanıcılar bakiyeyi görür');
       }
+      this.isFirstLoad = false;
     });
     
   }

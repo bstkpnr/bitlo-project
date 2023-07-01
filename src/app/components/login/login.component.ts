@@ -11,6 +11,7 @@ export class LoginComponent {
   username: string = '';
   password: string = '';
   loginError: string = '';
+  hide = true;
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -38,6 +39,9 @@ export class LoginComponent {
         console.error('Api isteği sırasında bir hata oluştu', error);
       }
     );
+  }
+  passHide() {
+    this.hide = !this.hide; 
   }
 
   private isValidEmail(email: string): boolean {

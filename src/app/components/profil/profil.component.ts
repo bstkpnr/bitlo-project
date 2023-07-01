@@ -18,42 +18,44 @@ export class ProfilComponent implements OnInit {
   isLoggedIn = false;
   userData: UserList = [];
   displayedColumns: string[] = ['key', 'value'];
+  isFirstLoad = true;
 
-  dataSource = new MatTableDataSource(this.userData)
+  dataSource = new MatTableDataSource(this.userData);
   constructor(private authService: AuthService) {}
 
   getUserData() {
     this.authService.userProfil().subscribe(
       (data) => {
-        let userDataRaw = data.me; 
+        let userDataRaw = data.me;
         this.userData = Object.keys(userDataRaw)
-          .filter(key => key !== 'country') 
-          .map(e => {
+          .filter((key) => key !== 'country')
+          .map((e) => {
             return {
-              key: e, 
-              value: userDataRaw[e]
+              key: e,
+              value: userDataRaw[e],
             };
           });
         console.log('Nerde bu', data);
         this.dataSource = new MatTableDataSource(this.userData);
         console.log(this.dataSource);
         console.log(this.dataSource.filteredData[0]);
-        this.isLoggedIn = true; 
+        this.isLoggedIn = true;
       },
       (error) => {
         console.error('Bir hata oluştu:', error);
       }
     );
   }
-  
 
   ngOnInit(): void {
-    this.authService.isLoggedIn().subscribe((loggedIn:boolean) => {
-      this.isLoggedIn = loggedIn;     if (this.isLoggedIn) {
-      this.getUserData();
-    } else {
-      alert('Sadece giriş yapmış kullanıcılar bu alanı görüntüleyebilir');
-    }
+    this.authService.isLoggedIn().subscribe((loggedIn: boolean) => {
+      this.isLoggedIn = loggedIn;
+      if (this.isLoggedIn) {
+        this.getUserData();
+      } else if (this.isFirstLoad) {
+        alert('Sadece giriş yapmış kullanıcılar bu alanı görüntüleyebilir');
+      }
+      this.isFirstLoad = false;
     });
   }
 }
