@@ -74,11 +74,14 @@ export class BalanceComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.isLoggedIn = this.authService.isLoggedIn();
-    if (this.isLoggedIn) {
-      this.getUserBalance();
-    } else {
-      alert('Giriş yapmış kullanıcılar bakiyeyi görür');
-    }
+    this.authService.isLoggedIn().subscribe((loggedIn:boolean) => {
+      this.isLoggedIn = loggedIn;
+      if (this.isLoggedIn) {
+        this.getUserBalance();
+      } else {
+        alert('Giriş yapmış kullanıcılar bakiyeyi görür');
+      }
+    });
+    
   }
 }

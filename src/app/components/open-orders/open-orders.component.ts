@@ -28,7 +28,7 @@ export class OpenOrdersComponent implements OnInit {
     'price',
     'orderAmount',
     'fillAmount',
-    'fillPercent'
+    'fillPercent',
   ];
 
   dataSource = new MatTableDataSource(this.openOrdersData);
@@ -38,8 +38,12 @@ export class OpenOrdersComponent implements OnInit {
     this.authService.userOpenOrders().subscribe(
       (data) => {
         this.openOrdersData = data.openOrders.map((order: OpenOrders) => {
-          const fillPercent = ((order.fillAmount / order.orderAmount) * 100).toFixed(2);
-          return { ...order, fillPercent: `%${fillPercent}` };});
+          const fillPercent = (
+            (order.fillAmount / order.orderAmount) *
+            100
+          ).toFixed(2);
+          return { ...order, fillPercent: `%${fillPercent}` };
+        });
         console.log('Nerde bu datalarr', data);
         this.dataSource = new MatTableDataSource(this.openOrdersData);
         console.log(this.dataSource);
@@ -52,11 +56,13 @@ export class OpenOrdersComponent implements OnInit {
     );
   }
   ngOnInit(): void {
-    this.isLoggedIn = this.authService.isLoggedIn();
-    if (this.isLoggedIn) {
-      this.getOpenOrdersData();
-    } else {
-      alert('Giriş yapmış kullanıcılar bakiyeyi görsün');
-    }
+    this.authService.isLoggedIn().subscribe((loggedIn: boolean) => {
+      this.isLoggedIn = loggedIn;
+      if (this.isLoggedIn) {
+        this.getOpenOrdersData();
+      } else {
+        alert('Giriş yapmış kullanıcılar bakiyeyi görsün');
+      }
+    });
   }
 }

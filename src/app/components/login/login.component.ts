@@ -28,6 +28,7 @@ export class LoginComponent {
       (response) => {
         if (response.code === 0) {
           localStorage.setItem('token', response.token);
+          this.authService.setLoggedIn(true);
           this.router.navigate(['/profil']);
         } else {
           this.loginError = 'Kullanıcı adı ya da parola yanlış !';

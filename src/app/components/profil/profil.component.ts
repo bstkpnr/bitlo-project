@@ -48,10 +48,12 @@ export class ProfilComponent implements OnInit {
   
 
   ngOnInit(): void {
-    this.isLoggedIn = this.authService.isLoggedIn();
-    if (this.isLoggedIn) {
+    this.authService.isLoggedIn().subscribe((loggedIn:boolean) => {
+      this.isLoggedIn = loggedIn;     if (this.isLoggedIn) {
       this.getUserData();
     } else {
       alert('Sadece giriş yapmış kullanıcılar bu alanı görüntüleyebilir');
-    }  }
+    }
+    });
+  }
 }
