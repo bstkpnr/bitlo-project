@@ -26,8 +26,19 @@ body {
 
   .user-info p {
     margin: 10px 0;
-  }
+    color: #0a2363;
+    font-family: 'Roboto';
+font-size: 20px; 
+font-weight: 600; }
+.user-info a {
+  text-decoration: none;
+  color: #0a2363;
+  font-family: 'Roboto';
+  font-size: 20px; 
+font-weight: 600;
 
+
+}
   .button-container {
     display: flex;
     justify-content: center;
