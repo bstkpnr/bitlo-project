@@ -7,7 +7,6 @@ import { MarketDetailComponent } from './components/market-detail/market-detail.
 import { ProfilComponent } from './components/profil/profil.component';
 import { BalanceComponent } from './components/balance/balance.component';
 import { OpenOrdersComponent } from './components/open-orders/open-orders.component';
-import { LogoutComponent } from './components/logout/logout.component';
 
 const routes: Routes = [
   { path: '' ,component: HomeComponent},
@@ -17,7 +16,6 @@ const routes: Routes = [
   { path: 'profil', component: ProfilComponent,data:{showFooter:true} },
   { path: 'profil/bakiyeler', component: BalanceComponent,data:{showFooter:true} },
   { path: 'profil/acik-emirler', component: OpenOrdersComponent ,data:{showFooter:true}},
-  { path: 'logout', component: LogoutComponent,data:{showFooter:true} },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

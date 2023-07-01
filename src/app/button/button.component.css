@@ -1,24 +1,24 @@
 .custom-button {
-    background-color: #0a2363;
-    color: #ffffff;
-    border: none;
-    padding: 15px 30px;  
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    border-radius: 5px;
+  background-color: #0a2363;
+  color: #ffffff;
+  border: none;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 .custom-button:hover {
-    background-color: #14c38e;
-    color: white;
+  background-color: #14c38e;
+  color: white;
 }
 @media (max-width: 600px) {
-    .custom-button {
-      padding: 10px 20px;
-      font-size: 14px;
-    }
+  .custom-button {
+    padding: 10px 20px;
+    font-size: 14px;
   }
+}

@@ -4,13 +4,34 @@
     <mat-card-content>
       <form (ngSubmit)="login()" #loginForm="ngForm">
         <mat-form-field appearance="outline">
-          <input matInput type="text" placeholder="Kullanıcı Adı" name="username" [(ngModel)]="username" required email  />
-          <mat-error *ngIf="loginForm.controls['username'].hasError('required')">Lütfen kullanıcı adınızı giriniz.</mat-error>
-          <mat-error *ngIf="loginForm.controls['username'].hasError('email')">Geçerli bir e-posta adresi giriniz.</mat-error>
+          <input
+            matInput
+            type="text"
+            placeholder="Kullanıcı Adı"
+            name="username"
+            [(ngModel)]="username"
+            required
+            email
+          />
+          <mat-error *ngIf="loginForm.controls['username'].hasError('required')"
+            >Lütfen kullanıcı adınızı giriniz.</mat-error
+          >
+          <mat-error *ngIf="loginForm.controls['username'].hasError('email')"
+            >Geçerli bir e-posta adresi giriniz.</mat-error
+          >
         </mat-form-field>
-        <mat-form-field appearance="outline" >
-          <input matInput type="password" placeholder="Parola" name="password" [(ngModel)]="password" required />
-          <mat-error *ngIf="loginForm.controls['password'].hasError('required')">Lütfen parolanızı giriniz.</mat-error>
+        <mat-form-field appearance="outline">
+          <input
+            matInput
+            type="password"
+            placeholder="Parola"
+            name="password"
+            [(ngModel)]="password"
+            required
+          />
+          <mat-error *ngIf="loginForm.controls['password'].hasError('required')"
+            >Lütfen parolanızı giriniz.</mat-error
+          >
         </mat-form-field>
         <button mat-raised-button color="primary">Giriş Yap</button>
         <div *ngIf="loginError" class="error">{{ loginError }}</div>

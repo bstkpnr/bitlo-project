@@ -22,15 +22,14 @@
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
-.title{
-  font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 27px;
-    text-transform: capitalize;
-    color: #0a0094;
-  
+.title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27px;
+  text-transform: capitalize;
+  color: #0a0094;
 }
 
 .table-container {
@@ -41,17 +40,17 @@
 .demo-table {
   width: 100%;
 }
-.demo-table th{
+.demo-table th {
   color: #adadad;
   font-size: 16px;
-  font-family: 'Roboto';
-    font-style: normal;
+  font-family: "Roboto";
+  font-style: normal;
 }
 .demo-table td {
   font-size: 14px;
   color: #333;
-  font-family: 'Roboto';
-    font-style: normal;
+  font-family: "Roboto";
+  font-style: normal;
 }
 
 @media screen and (max-width: 600px) {

@@ -1,17 +1,44 @@
 <div *ngIf="marketData" class="market-info">
   <h2>{{ marketData.marketCode }}</h2>
-  <img [src]="baseAssetLogoUrl" alt="{{ marketData.baseAsset }} logo" width="100px">
+  <img
+    [src]="baseAssetLogoUrl"
+    alt="{{ marketData.baseAsset }} logo"
+    width="100px"
+  />
   <ul class="market-details">
-    <li><strong>Current Quote:</strong> {{ marketData.currentQuote | number:'1.0-0' }}</li>
-    <li><strong>Change 24h:</strong> {{ marketData.change24h | number:'1.0-0' }}</li>
+    <li>
+      <strong>Current Quote:</strong>
+      {{ marketData.currentQuote | number : "1.0-0" }}
+    </li>
+    <li>
+      <strong>Change 24h:</strong> {{ marketData.change24h | number : "1.0-0" }}
+    </li>
     <li>
       <strong>Change 24h Percent:</strong>
-      <span [ngStyle]="{'color': marketData.change24hPercent > 0 ? 'green' : marketData.change24hPercent < 0 ? 'red' : 'black'}">
-        {{ marketData.change24hPercent | number:'1.2-2' }}%
+      <span
+        [ngStyle]="{
+          color:
+            marketData.change24hPercent > 0
+              ? 'green'
+              : marketData.change24hPercent < 0
+              ? 'red'
+              : 'black'
+        }"
+      >
+        {{ marketData.change24hPercent | number : "1.2-2" }}%
       </span>
     </li>
-    <li><strong>Highest Quote 24h:</strong> {{ marketData.highestQuote24h | number:'1.0-0' }}</li>
-    <li><strong>Lowest Quote 24h:</strong> {{ marketData.lowestQuote24h | number:'1.0-0' }}</li>
-    <li><strong>Weighted Average 24h:</strong> {{ marketData.weightedAverage24h | number:'1.0-0' }}</li>
+    <li>
+      <strong>Highest Quote 24h:</strong>
+      {{ marketData.highestQuote24h | number : "1.0-0" }}
+    </li>
+    <li>
+      <strong>Lowest Quote 24h:</strong>
+      {{ marketData.lowestQuote24h | number : "1.0-0" }}
+    </li>
+    <li>
+      <strong>Weighted Average 24h:</strong>
+      {{ marketData.weightedAverage24h | number : "1.0-0" }}
+    </li>
   </ul>
 </div>
