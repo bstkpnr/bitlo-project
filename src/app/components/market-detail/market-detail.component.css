@@ -1,46 +1,52 @@
 .market-info {
-    border-radius: 8px;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .market-info h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #333;
-  }
-  
-  .market-info img {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 20px;
-    border-radius: 50%;
-  }
-  
-  .market-details {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0;
-    text-align: center;
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  background-color: #f9f9f9;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
 
+.market-info h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #2c3e50;
+  text-transform: uppercase;
+}
 
-  }
-  
-  .market-details li {
-    margin-bottom: 10px;
-  }
-  
-  .market-details li strong {
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .market-details li span {
-    font-weight: bold;
-    color: #28a745;
-  }
-  
-  .market-details li span.red {
-    color: #dc3545;
-  }
-  
+.market-info .logo {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 30px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.market-info .logo:hover {
+  transform: rotate(360deg);
+}
+
+.market-details {
+  list-style: none;
+  padding: 0;
+  margin: 30px 0;
+}
+
+.market-details li {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #7f8c8d;
+}
+
+.market-details li strong {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.market-details li span {
+  font-weight: bold;
+  color: #27ae60;
+}
+
+.market-details li span.red {
+  color: #e74c3c;
+}

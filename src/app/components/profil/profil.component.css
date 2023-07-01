@@ -17,7 +17,6 @@
 }
 
 .card-header {
-  background: linear-gradient(45deg, #0a2363 30%, #14c38e 90%);
   color: white;
   padding: 10px 20px;
   border-top-left-radius: 15px;
@@ -28,10 +27,27 @@
   width: 100%;
  
 }
+.title{
+  font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+    text-transform: capitalize;
+    color: #0a0094;
+}
 
+.demo-table th{
+  color: #adadad;
+  font-size: 16px;
+  font-family: 'Roboto';
+    font-style: normal;
+}
 .demo-table td {
-  font-size: 0.9rem;
+  font-size: 14px;
   color: #333;
+  font-family: 'Roboto';
+    font-style: normal;
 }
 
 .button-container {
