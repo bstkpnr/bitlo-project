@@ -10,7 +10,6 @@ import { MarketDetailComponent } from './components/market-detail/market-detail.
 import { ProfilComponent } from './components/profil/profil.component';
 import { BalanceComponent } from './components/balance/balance.component';
 import { OpenOrdersComponent } from './components/open-orders/open-orders.component';
-import { LogoutComponent } from './components/logout/logout.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
@@ -45,7 +44,6 @@ import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
     ProfilComponent,
     BalanceComponent,
     OpenOrdersComponent,
-    LogoutComponent,
   ],
   imports: [
     BrowserModule,
