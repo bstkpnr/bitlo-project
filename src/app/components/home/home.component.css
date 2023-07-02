@@ -1,5 +1,13 @@
 body {
-  background: linear-gradient(117deg, hsla(0, 0%, 100%, .21), rgba(120, 230, 176, .21) 0, rgba(83, 151, 169, .21) 30%, hsla(0, 0%, 66%, .21) 63%, rgba(21, 19, 158, .21)) 0 0;
+  background: linear-gradient(
+      117deg,
+      hsla(0, 0%, 100%, 0.21),
+      rgba(120, 230, 176, 0.21) 0,
+      rgba(83, 151, 169, 0.21) 30%,
+      hsla(0, 0%, 66%, 0.21) 63%,
+      rgba(21, 19, 158, 0.21)
+    )
+    0 0;
   margin: 0;
   padding: 0;
 }
@@ -18,12 +26,20 @@ body {
 }
 .info-wrapper {
   width: 50%;
+  height: 400px;
   max-width: 600px;
+  margin-top: 20px;
   text-align: center;
   padding: 20px;
-  background: linear-gradient(117deg, hsla(0, 0%, 100%, .21), rgba(120, 230, 176, .21) 0, rgba(83, 151, 169, .21) 30%, hsla(0, 0%, 66%, .21) 63%, rgba(21, 19, 158, .21)) 0 0;
-  border-radius: 10px;
-
+  background: linear-gradient(
+      117deg,
+      hsla(0, 0%, 100%, 0.21),
+      rgba(120, 230, 176, 0.21) 0,
+      rgba(83, 151, 169, 0.21) 30%,
+      hsla(0, 0%, 66%, 0.21) 63%,
+      rgba(21, 19, 158, 0.21)
+    )
+    0 0;
 }
 
 .user-info p {
@@ -58,7 +74,6 @@ body {
   height: 100%;
   background: linear-gradient(45deg, #0a2363 30%, #14c38e 90%);
   margin: 5px;
-
 }
 
 .carousel-caption {
@@ -103,7 +118,6 @@ li.item {
   padding: 10px;
   border-bottom: 1px solid #ccc;
   cursor: pointer;
-
 }
 
 li.item:last-child {
@@ -134,22 +148,22 @@ img.icon-img {
     width: 90%;
     padding: 10px;
   }
-  
+
   .carousel-wrapper {
     width: 100%;
   }
-  
+
   ul.items {
     flex-wrap: wrap;
   }
-  
+
   li.item {
     flex-direction: column;
     align-items: flex-start;
     padding: 20px;
     border-bottom: none;
   }
-  
+
   img.icon-img {
     margin-right: 0;
     margin-bottom: 10px;
