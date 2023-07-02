@@ -36,7 +36,12 @@
   overflow-x: auto;
   margin-top: 1rem;
 }
-
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 20px;
+  margin-top: 20px;
+}
 .demo-table {
   width: 100%;
 }

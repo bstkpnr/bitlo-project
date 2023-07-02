@@ -41,7 +41,12 @@
   .demo-table {
     width: 100%;
   }
-  
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 20px;
+    margin-top: 20px;
+  }  
   .demo-table th{
     color: #adadad;
     font-size: 16px;
