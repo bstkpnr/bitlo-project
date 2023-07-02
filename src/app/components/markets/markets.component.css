@@ -40,6 +40,8 @@ mat-card-title {
 }
 .table-container {
   margin-top: 1rem;
+  overflow-x: auto;
+
 }
 
 .demo-table {
@@ -85,8 +87,21 @@ mat-card-title {
   overflow-x: auto;
 }
 @media screen and (max-width: 600px) {
+  .table-container {
+    overflow-x: auto;
+  }
+
   .demo-card {
-    width: 95%;
+    width: 100%;
     margin: 1rem;
   }
+
+  mat-header-cell, .demo-table td {
+    white-space: nowrap;
+    font-size: 12px;
+  }
+  .demo-table td {
+    white-space: nowrap;
+  }
+
 }
